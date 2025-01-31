@@ -22,9 +22,6 @@ WORKDIR /app
 
 COPY pyproject.toml ./
 
-ARG POETRY_HTTP_BASIC_STOFORY_PASSWORD
-RUN poetry config http-basic.stofory gitlab-ci-token ${POETRY_HTTP_BASIC_STOFORY_PASSWORD}
-
 COPY . ./
 
 RUN poetry install
