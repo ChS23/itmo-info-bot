@@ -1,0 +1,11 @@
+services:
+  get_itmo_info:
+    container_name: get_itmo_info
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8951:8000
+    env_file:
+      - .env
